@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block title %}
@@ -7,6 +6,7 @@ Pokemon
 
 {% block content %}
 <h1>Add Your Pokemon!</h1>
+<h2>Gotta catch them all!</h2>
 <form action="/pokemon_form" method="POST">
   {{form.hidden_tag()}}
     <div class="form-group">
@@ -43,7 +43,7 @@ Pokemon
         <td>{{pokemon_name.hp_base_stat}}</td>
         <td>{{pokemon_name.defense_base_stat}}</td>
         </tr>
-        <img src="{{pokemon_name.sprite_url}} alt="pokemon picture">
+        <img src="{{pokemon_name.sprite_url}}" alt="pokemon picture">
         {% endfor %}
     </tbody>
   </table>
