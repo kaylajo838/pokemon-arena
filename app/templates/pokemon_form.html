@@ -6,15 +6,16 @@ Pokemon
 {% endblock %}
 
 {% block content %}
-<h1>Pokemon Form</h1>
+<h1>Add Your Pokemon!</h1>
 <form action="/pokemon_form" method="POST">
+  {{form.hidden_tag()}}
     <div class="form-group">
-      <label for="name">Pokemon Name</label>
-      <input type="text" name="name" class="form-control" id="name">
+      {{form.pokemon_name.label}}
+      {{form.pokemon_name(class="form-control")}}
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    {{form.submit_btn(class="btn btn-primary")}}
     <div style="color:red">
-      <small>{{error}}</small>
+      <small style="color: red">{{error}}</small>
     </div>
 </form>
 
