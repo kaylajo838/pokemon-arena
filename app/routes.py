@@ -2,6 +2,8 @@ from flask import render_template, request
 import requests
 from app import app
 from .forms import PokemonNameForm
+from .forms import RegistrationForm
+from .forms import LoginForm
 
 @app.route('/')
 def home():
@@ -32,3 +34,13 @@ def pokemon_form():
             error = "That pokemon doesn't exist."
             return render_template('pokemon_form.html', error=error, form=form)
     return render_template('pokemon_form.html', form=form)
+
+@app.route('/registration', methods=['GET', 'POST'])
+def registration():
+    form = RegistrationForm
+    return render_template('registration.html', form=form)
+
+@app.route('/sign_in', methods=['GET', 'POST'])
+def sign_in():
+    form = LoginForm
+    return render_template('sign_in.html', form=form)
