@@ -37,10 +37,10 @@ def pokemon_form():
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
-    form = RegistrationForm
-    return render_template('registration.html', form=form)
+
+    return render_template('registration.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm
-    return render_template('sign_in.html', form=form)
+
+    return render_template('login.html')
