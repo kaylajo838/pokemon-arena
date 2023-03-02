@@ -40,7 +40,7 @@ def registration():
     form = RegistrationForm
     return render_template('registration.html', form=form)
 
-@app.route('/sign_in', methods=['GET', 'POST'])
-def sign_in():
+@app.route('/login', methods=['GET', 'POST'])
+def login():
     form = LoginForm
     return render_template('sign_in.html', form=form)
