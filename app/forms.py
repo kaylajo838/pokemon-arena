@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, EmailField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, EqualTo
 
 class PokemonNameForm(FlaskForm):
     pokemon_name = StringField('Pokemon Name:', validators=[DataRequired()])
@@ -11,6 +11,7 @@ class RegistrationForm(FlaskForm):
     last_name = StringField('Last Name:', validators=[DataRequired()])
     email = EmailField('Email:', validators=[DataRequired()])
     password = PasswordField('Password:', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password: ', validators=[DataRequired(), EqualTo('password')])
     submit_btn = SubmitField('Login')
 
 class LoginForm(FlaskForm):
