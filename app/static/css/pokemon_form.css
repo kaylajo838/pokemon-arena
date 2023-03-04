@@ -16,6 +16,11 @@ form {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    background-color: rgba(0, 0, 0, 0.685);
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: .5em;
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -39,5 +44,6 @@ form {
 label {
     font-size: 25px;
     font-weight: 600;
+    color: white;
 }
 
