@@ -1,5 +1,8 @@
+{% block css %}<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">{% endblock %}
+
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Welcome to the ultimate Pokemon page!</h1>
+    <!-- <h1>Welcome To The Ultimate Pokemon Page!</h1> -->
+    <img src="../static/images/home-title-image.png" alt="">
 {% endblock %}

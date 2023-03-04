@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
+{% block css %}<link rel="stylesheet" href="{{url_for('static', filename='css/pokemon_form.css')}}">{% endblock %}
+
 {% block title %}
 Pokemon
 {% endblock %}
 
 {% block content %}
-<h1>Add Your Pokemon!</h1>
-<h2>Gotta catch them all!</h2>
+<img src="../static/images/database-title.png" alt="" class="title-img">
+<!-- <h1>Add Your Pokemon!</h1>
+<h2>Gotta catch them all!</h2> -->
 <form action="/pokemon_form" method="POST">
   {{form.hidden_tag()}}
     <div class="form-group">
@@ -30,6 +33,7 @@ Pokemon
         <th scope="col">Attack Base Stat</th>
         <th scope="col">HP Base Stat</th>
         <th scope="col">Defense Base Stat</th>
+        <th scope="col">Pokemon Image</th>
       </tr>
     </thead>
     <tbody>
@@ -42,8 +46,9 @@ Pokemon
         <td>{{pokemon_name.attack_base_stat}}</td>
         <td>{{pokemon_name.hp_base_stat}}</td>
         <td>{{pokemon_name.defense_base_stat}}</td>
+        <td><img src="{{pokemon_name.sprite_url}}" alt="pokemon picture"></td>
         </tr>
-        <img src="{{pokemon_name.sprite_url}}" alt="pokemon picture">
+        <!-- <img src="{{pokemon_name.sprite_url}}" alt="pokemon picture"> -->
         {% endfor %}
     </tbody>
   </table>

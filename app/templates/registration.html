@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
+{% block css %}<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">{% endblock %}
+
 {% block title %}
 Registration
 {% endblock %}
 
 {% block content %}
-<h1>Sign Up</h1>
+<img src="../static/images/register-img.png" alt="" class="title-img">
 <form action="/registration" method="POST">
     {{form.hidden_tag()}}
     <div class="form-group">
