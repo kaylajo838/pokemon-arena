@@ -1,9 +1,19 @@
-h1 {
-    text-align: center;
+.navbar {
+    background-color: #fed523;
+    border-bottom: 2px solid black;
 }
 
-h2 {
-    text-align: center;
+.navbar-brand img {
+    height: 50px;
+    width: 280px;
+}
+
+body {
+    background-image: url("../images/pokemon13-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 table { 

@@ -1,0 +1,48 @@
+.title-img {
+    height: 100px;
+    width: 220px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: .5em;
+    background-color: rgba(0, 0, 0, 0.685);
+    padding: 5px 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#email,
+#password {
+    border: 2px solid black;
+    width: 20em;
+}
+
+#submit_btn {
+    background-color: #fed523;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+}
+
+label {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
