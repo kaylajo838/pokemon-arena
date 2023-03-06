@@ -14,15 +14,18 @@ def home():
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     form = RegistrationForm()
-    if request.method == 'POST' and form.validate_on_submit:
+    if request.method == 'POST' and form.validate_on_submit():
         new_user_dict = {
             'first_name': form.first_name.data.title(),
             'last_name': form.last_name.data.title(),
             'email': form.email.data.lower(),
             'password': form.password.data
         }
+        # create instance of User
         new_user = User()
+        # implementing values from our form data for our instance
         new_user.from_dict(new_user_dict)
+
         new_user.save_to_db()
 
         flash('Nice! You are officially registered!', 'success')
@@ -33,7 +36,7 @@ def registration():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if request.method == 'POST' and form.validate_on_submit:
+    if request.method == 'POST' and form.validate_on_submit():
         email = form.email.data.lower()
         password = form.password.data
 
@@ -60,7 +63,7 @@ def logout():
 @app.route('/pokemon_form', methods=['GET', 'POST'])
 def pokemon_form():
     form = PokemonNameForm()
-    if request.method == 'POST' and form.validate_on_submit:
+    if request.method == 'POST' and form.validate_on_submit():
         name = form.pokemon_name.data.lower()
         pokemon_url = f"https://pokeapi.co/api/v2/pokemon/{name}"
         pokemon_response = requests.get(pokemon_url)
