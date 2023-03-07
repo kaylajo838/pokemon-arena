@@ -21,7 +21,7 @@ def create_app():
     migrate.init_app(app, db)
 
     # Configure Login Settings
-    login.login_view = 'login'
+    login.login_view = 'auth.login'
     login.login_message = 'You must be logged in to view this page.'
     login.login_message_category = 'warning'
 
