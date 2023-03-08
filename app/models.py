@@ -3,6 +3,12 @@ from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
+class Team(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    captured_id = db.Column(db.Integer, db.ForeignKey('captured.id'))
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String, nullable=False)
@@ -10,6 +16,8 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String, nullable=False, unique=True)
     password = db.Column(db.String, nullable=False)
     created_on = db.Column(db.DateTime, default=datetime.utcnow())
+    captured_pokemon = db.relationship('Captured', backref='capture', lazy='dynamic')
+    team = db.relationship('Team', backref='team', lazy='dynamic')
 
     # hash password
     def hash_password(self, original_password):
@@ -39,3 +47,31 @@ class User(UserMixin, db.Model):
 @login.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+class Captured(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    ability = db.Column(db.String)
+    base_experience = db.Column(db.Integer)
+    sprite_url = db.Column(db.String)
+    attack_base_stat = db.Column(db.Integer)
+    hp_base_stat = db.Column(db.Integer)
+    defense_base_stat = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    # register user attributes
+    def from_dict(self, data):
+        self.name = data['name']
+        self.ability = data['ability']
+        self.base_experience = data['base_experience']
+        self.sprite_url = data['sprite_url']
+        self.attack_base_stat = data['attack_base_stat']
+        self.hp_base_stat = data['hp_base_stat']
+        self.defense_base_stat = data['defense_base_stat']
+
+    # Save the post to database
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
+
