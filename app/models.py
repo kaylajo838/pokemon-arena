@@ -59,7 +59,7 @@ class Captured(db.Model):
     defense_base_stat = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    # register user attributes
+    # register captured attributes
     def from_dict(self, data):
         self.name = data['name']
         self.ability = data['ability']
@@ -69,7 +69,7 @@ class Captured(db.Model):
         self.hp_base_stat = data['hp_base_stat']
         self.defense_base_stat = data['defense_base_stat']
 
-    # Save the post to database
+    # Save the capture to database
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
