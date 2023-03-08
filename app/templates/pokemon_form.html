@@ -22,7 +22,7 @@ Pokemon
     </div>
 </form>
 
-{% if new_pokemon_data %}
+{% if captured_pokemon %}
 <table class="table table-striped table-hover table-dark">
     <thead>
       <tr>
@@ -37,19 +37,20 @@ Pokemon
       </tr>
     </thead>
     <tbody>
-        {% for pokemon_name in new_pokemon_data %}
-        <tr>
-        <th scope="row">{{pokemon_name.name}}</th>
-        <td>{{pokemon_name.ability}}</td>
-        <td>{{pokemon_name.base_experience}}</td>
-        <td>{{pokemon_name.sprite_url}}</td>
-        <td>{{pokemon_name.attack_base_stat}}</td>
-        <td>{{pokemon_name.hp_base_stat}}</td>
-        <td>{{pokemon_name.defense_base_stat}}</td>
-        <td><img src="{{pokemon_name.sprite_url}}" alt="pokemon picture"></td>
-        </tr>
-        {% endfor %}
+      {% for captured in captured_pokemon %}
+      <tr>
+        <th scope="row">{{captured.name}}</th>
+        <td>{{captured.ability}}</td>
+        <td>{{captured.base_experience}}</td>
+        <td>{{captured.sprite_url}}</td>
+        <td>{{captured.attack_base_stat}}</td>
+        <td>{{captured.hp_base_stat}}</td>
+        <td>{{captured.defense_base_stat}}</td>
+        <td><img src="{{captured.sprite_url}}" alt="pokemon picture"></td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
+
 {% endif %}
 {% endblock %}
