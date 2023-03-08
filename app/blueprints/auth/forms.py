@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, EqualTo
 
 class PokemonNameForm(FlaskForm):
     pokemon_name = StringField('Pokemon Name:', validators=[DataRequired()])
-    submit_btn = SubmitField('Let\'s go!')
+    submit_btn = SubmitField('Capture!')
 
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name:', validators=[DataRequired()])
