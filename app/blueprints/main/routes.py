@@ -167,14 +167,14 @@ def battle_team(user_id):
     opponent_total_hp = sum(opponent_hp)
     self_total_hp = sum(self_hp)
 
-    # self against opponent
+    # opponent against self
     if opponent_total_attack - self_total_defense < 0:
         defense_against_opponent_attack = 0
     else:
         defense_against_opponent_attack = opponent_total_attack - self_total_defense
     total_attack_from_opponenet = self_total_hp - defense_against_opponent_attack
     
-    # opponent against self 
+    # self against opponent 
     if self_total_attack - opponent_total_defense < 0:
         defense_against_self_attack = 0
     else:
@@ -185,7 +185,7 @@ def battle_team(user_id):
     if total_attack_from_opponenet > total_attack_from_self:
         flash(f"{current_user.first_name}'s team wins the game with {total_attack_from_opponenet} points!", "success")
     else:
-        flash(f"{user.first_name}'s tean wins the game with {total_attack_from_opponenet} points!", "danger")
+        flash(f"{user.first_name}'s team wins the game with {total_attack_from_opponenet} points!", "danger")
 
     return render_template('battle_team.html', opponent_team=opponent_team, my_team=my_team)
 
