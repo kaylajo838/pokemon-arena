@@ -47,3 +47,17 @@ label {
     color: white;
 }
 
+#catch_btn {
+    background-color: #fed523;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+    border-radius: .5em;
+    text-decoration: none;
+    padding: 6px 12px;
+}
+
+.form {
+    border: none;
+    background-color: transparent;
+}
