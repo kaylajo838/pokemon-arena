@@ -4,10 +4,10 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-class Team(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    captured_id = db.Column(db.Integer, db.ForeignKey('captured.id'))
+team = db.Table('team',
+        db.Column('owner_id', db.Integer, db.ForeignKey('user.id')),
+        db.Column('captured_pokemon_id', db.Integer, db.ForeignKey('captured.id'))
+        )
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -16,9 +16,8 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String, nullable=False, unique=True)
     password = db.Column(db.String, nullable=False)
     created_on = db.Column(db.DateTime, default=datetime.utcnow())
-    captured_pokemon = db.relationship('Captured', backref='capture', lazy='dynamic')
-    team = db.relationship('Team', backref='team', lazy='dynamic')
-
+    captured_pokemon = db.relationship('Captured', secondary = team, backref='owner', lazy='dynamic')
+    
     # hash password
     def hash_password(self, original_password):
         return generate_password_hash(original_password)
@@ -44,6 +43,16 @@ class User(UserMixin, db.Model):
         db.session.add(self)
         db.session.commit()
 
+    # catch method
+    def catch(self, poke):
+        self.captured_pokemon.append(poke)
+        db.session.commit()
+
+    # remove from team method
+    def remove_from_team(self, user):
+        self.captured_pokemon.remove(user)
+        db.session.commit()
+
 @login.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
@@ -57,7 +66,6 @@ class Captured(db.Model):
     attack_base_stat = db.Column(db.Integer)
     hp_base_stat = db.Column(db.Integer)
     defense_base_stat = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # register captured attributes
     def from_dict(self, data):
@@ -72,6 +80,15 @@ class Captured(db.Model):
     # Save the capture to database
     def save_to_db(self):
         db.session.add(self)
+        db.session.commit()
+
+    # Update our db
+    def update_to_db(self):
+        db.session.commit()
+
+    # Delete from db
+    def delete_pokemon(self):
+        db.session.delete(self)
         db.session.commit()
 
 
