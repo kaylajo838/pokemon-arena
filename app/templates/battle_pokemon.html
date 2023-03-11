@@ -1,0 +1,32 @@
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/battle_pokemon.css')}}">{% endblock %}
+
+{% extends 'base.html' %}
+
+{% block title %}
+Battle Arena
+{% endblock %}
+
+{% block content %}
+<img src="../static/images/battle-arena-img.png" alt="" class="title-img">
+<img src="../static/images/select-your-opponent-img.png" alt="" class="second-title-img">
+
+<div class="card-container">
+    {% if users %}
+    {% for user in users %}
+    {% if user != current_user %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-top">
+            <h5>Trainor</h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+            <a href="" class="btn btn-danger">Battle!</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}
