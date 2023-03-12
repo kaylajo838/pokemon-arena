@@ -122,16 +122,9 @@ def battle_queue():
 @login_required
 def battle_team(user_id):
     user = User.query.get(user_id)
+
     opponent_team = user.captured_pokemon
     my_team = current_user.captured_pokemon
-
-    # if opponent_team.count() < 5:
-    #     flash(f'Oh no! {user.first_name} doesn\'t have enough pokemon to battle!', 'danger')
-    #     redirect(url_for('main.battle_queue'))
-    # elif my_team.count() < 5:
-    #     flash(f'Oh no! You don\'t have enough pokemon to battle!', 'danger')
-    #     redirect(url_for('main.battle_queue'))
-
 
     opponent_attack = []
     self_attack = []
@@ -183,13 +176,80 @@ def battle_team(user_id):
 
 
     if total_attack_from_opponenet > total_attack_from_self:
-        flash(f"{current_user.first_name}'s team wins the game with {total_attack_from_opponenet} points!", "success")
+        flash(f"You won against {user.first_name}'s team! {current_user.first_name}'s team wins the game with {total_attack_from_opponenet} total points!", "success")
     else:
-        flash(f"{user.first_name}'s team wins the game with {total_attack_from_opponenet} points!", "danger")
+        flash(f"You lost against {user.first_name}'s team. {user.first_name}'s team wins the game with {total_attack_from_opponenet} total points.", "danger")
 
     return render_template('battle_team.html', opponent_team=opponent_team, my_team=my_team)
 
-@main.route('/battle')
-@login_required
-def battle():
-    return render_template('battle.html')
+# @main.route('/battle/<user_id>')
+# @login_required
+# def battle(user_id): 
+#     user = User.query.get(user_id)
+
+#     opponent_team = user.captured_pokemon
+#     my_team = current_user.captured_pokemon
+
+#     # if opponent_team.count() < 5:
+#     #     flash(f'Oh no! {user.first_name} doesn\'t have enough pokemon to battle!', 'danger')
+#     #     redirect(url_for('main.battle_queue'))
+#     # elif my_team.count() < 5:
+#     #     flash(f'Oh no! You don\'t have enough pokemon to battle!', 'danger')
+#     #     redirect(url_for('main.battle_queue'))
+
+
+#     opponent_attack = []
+#     self_attack = []
+
+#     opponent_defense = []
+#     self_defense = []
+
+#     opponent_hp =[]
+#     self_hp = []
+
+#     for opponent_attack_play in opponent_team:
+#         opponent_attack.append(opponent_attack_play.attack_base_stat)
+#     for self_attack_play in my_team:
+#         self_attack.append(self_attack_play.attack_base_stat)
+    
+#     for opponent_defense_play in opponent_team:
+#         opponent_defense.append(opponent_defense_play.defense_base_stat)
+#     for self_defense_play in my_team:
+#         self_defense.append(self_defense_play.defense_base_stat)
+    
+#     for opponent_hp_play in opponent_team:
+#         opponent_hp.append(opponent_hp_play.defense_base_stat)
+#     for self_hp_play in my_team:
+#         self_hp.append(self_hp_play.defense_base_stat)
+
+
+#     opponent_total_attack = sum(opponent_attack)
+#     self_total_attack = sum(self_attack)
+    
+#     opponent_total_defense = sum(opponent_defense)
+#     self_total_defense = sum(self_defense)
+    
+#     opponent_total_hp = sum(opponent_hp)
+#     self_total_hp = sum(self_hp)
+
+#     # opponent against self
+#     if opponent_total_attack - self_total_defense < 0:
+#         defense_against_opponent_attack = 0
+#     else:
+#         defense_against_opponent_attack = opponent_total_attack - self_total_defense
+#     total_attack_from_opponenet = self_total_hp - defense_against_opponent_attack
+    
+#     # self against opponent 
+#     if self_total_attack - opponent_total_defense < 0:
+#         defense_against_self_attack = 0
+#     else:
+#         defense_against_self_attack = self_total_attack - opponent_total_defense
+#     total_attack_from_self = opponent_total_hp - defense_against_self_attack
+
+
+#     if total_attack_from_opponenet > total_attack_from_self:
+#         flash(f"You won against {user.first_name}'s team! {current_user.first_name}'s team wins the game with {total_attack_from_opponenet} total points!", "success")
+#     else:
+#         flash(f"You lost against {user.first_name}'s team. {user.first_name}'s team wins the game with {total_attack_from_opponenet} total points.", "danger")
+
+#     return render_template('battle.html', opponent_team=opponent_team, my_team=my_team)
