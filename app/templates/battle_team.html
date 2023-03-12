@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block css %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/view_team.css')}}">{% endblock %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/battle_team.css')}}">{% endblock %}
 
 {% block title %}
-Battle
+Battle Team
 {% endblock %}
 
 {% block content %}
 <img src="../static/images/i-choose-you-img.png" alt="" class="title-img">
 
+
 {% if opponent_team %}
+<img src="../static/images/opponents-team-img.png" alt="" class="opponent-team-img">
 <table class="table table-striped table-hover table-dark">
     <thead>
         <tr>
@@ -43,6 +45,7 @@ Battle
 
 
 {% if my_team %}
+<img src="../static/images/your-team-img.png" alt="" class="your-team-img">
 <table class="table table-striped table-hover table-dark">
     <thead>
         <tr>
@@ -73,6 +76,6 @@ Battle
 </table>
 {% endif %}
 
-<a href="">Battle!!!</a>
+<a href="" class="battle-btn">Battle!!!</a>
 
 {% endblock %}
