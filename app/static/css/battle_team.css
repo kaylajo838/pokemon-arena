@@ -1,0 +1,67 @@
+.title-img {
+    height: 170px;
+    width: 360px;
+    margin: 20px 0;
+}
+
+.opponent-team-img {
+    height: 67px;
+    width: 433px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.your-team-img {
+    height: 67px;
+    width: 267px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.685);
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: .5em;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+label {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
+
+.last-tr {
+    padding: 20px;
+}
+
+.battle-btn {
+    background-color: #fed523;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+    border-radius: .5em;
+    text-decoration: none;
+    padding: 6px 12px;
+    margin-bottom: 30px;
+}
