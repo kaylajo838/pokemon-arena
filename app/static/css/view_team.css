@@ -48,13 +48,16 @@ label {
 }
 
 .table_btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fed523;
     border: 2px solid black;
     border-radius: 0.5em;
     color: black;
     font-weight: 500;
     text-decoration: none;
-    
+    padding: 6px 12px;
 }
 
 .last-tr {
