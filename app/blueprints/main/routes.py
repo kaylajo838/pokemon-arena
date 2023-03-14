@@ -178,7 +178,7 @@ def battle_team(user_id):
     if total_attack_from_opponenet > total_attack_from_self:
         flash(f"You won against {user.first_name}'s team! {current_user.first_name}'s team wins the game with {total_attack_from_opponenet} total points!", "success")
     else:
-        flash(f"You lost against {user.first_name}'s team. {user.first_name}'s team wins the game with {total_attack_from_opponenet} total points.", "danger")
+        flash(f"You lost against {user.first_name}'s team. {user.first_name}'s team wins the game with {total_attack_from_self} total points.", "danger")
 
     return render_template('battle_team.html', opponent_team=opponent_team, my_team=my_team)
 
