@@ -21,7 +21,7 @@ Battle Team
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Ability</th>
-            <th scope="col">Base Experience</th>
+            <!-- <th scope="col">Base Experience</th> -->
             <th scope="col">Attack Base Stat</th>
             <th scope="col">HP Base Stat</th>
             <th scope="col">Defense Base Stat</th>
@@ -31,13 +31,13 @@ Battle Team
     <tbody>
         {% for pokemon in opponent_team %}
         <tr>
-            <th scope="row">{{pokemon.name}}</th>
-            <td>{{pokemon.ability}}</td>
-            <td>{{pokemon.base_experience}}</td>
+            <th scope="row">{{pokemon.name.title()}}</th>
+            <td>{{pokemon.ability.title()}}</td>
+            <!-- <td>{{pokemon.base_experience}}</td> -->
             <td>{{pokemon.attack_base_stat}}</td>
             <td>{{pokemon.hp_base_stat}}</td>
             <td>{{pokemon.defense_base_stat}}</td>
-            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture"></td>
+            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture" class="poke-img"></td>
         </tr>
         {% endfor %}
     </tbody>
@@ -52,7 +52,7 @@ Battle Team
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Ability</th>
-            <th scope="col">Base Experience</th>
+            <!-- <th scope="col">Base Experience</th> -->
             <th scope="col">Attack Base Stat</th>
             <th scope="col">HP Base Stat</th>
             <th scope="col">Defense Base Stat</th>
@@ -62,13 +62,13 @@ Battle Team
     <tbody>
         {% for pokemon in my_team %}
         <tr>
-            <th scope="row">{{pokemon.name}}</th>
-            <td>{{pokemon.ability}}</td>
-            <td>{{pokemon.base_experience}}</td>
+            <th scope="row">{{pokemon.name.title()}}</th>
+            <td>{{pokemon.ability.title()}}</td>
+            <!-- <td>{{pokemon.base_experience}}</td> -->
             <td>{{pokemon.attack_base_stat}}</td>
             <td>{{pokemon.hp_base_stat}}</td>
             <td>{{pokemon.defense_base_stat}}</td>
-            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture"></td>
+            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture" class="poke-img"></td>
         </tr>
         {% endfor %}
     </tbody>
