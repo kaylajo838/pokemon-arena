@@ -11,4 +11,177 @@
     align-items: center;
     height: 300px;
     width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.home-body-container {
+    background-color: #212529;
+    color: white;
+    padding: 30px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+hr {
+    border: 2px solid white;
+
+}
+
+span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pokeball {
+    width: 20px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1280px) {
+    .title-img {
+        height: 200px;
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .title-img {
+        height: 150px;
+        width: 300px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .home-body-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    hr {
+        border: 1px solid white;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 912px) {
+    .title-img {
+        height: 300px;
+        width: 600px;
+    }
+
+    .home-body-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .title-img {
+        height: 150px;
+        width: 300px;
+    }
+
+    .home-body-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+
+    hr {
+        border: 1px solid white;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 412px) {
+    .title-img {
+        height: 150px;
+        width: 300px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 280px) {
+    .title-img {
+        height: 120px;
+        width: 240px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .home-body-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    hr {
+        border: 1px solid white;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    .pokeball {
+        width: 15px;
+    }
 }
