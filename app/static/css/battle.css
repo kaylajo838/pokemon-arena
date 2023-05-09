@@ -10,3 +10,127 @@
     align-items: center;
     margin-top: 20px;
 }
+
+.battle-conatiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #212529;
+    color: white;
+    padding: 20px;
+    width: 600px;
+    margin-bottom: 50px;
+    border: 1px solid white;
+}
+
+.my-team-conatiner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.opponent-team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation-name: move-pokemon;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    /* animation-timing-function: ease-in-out; */
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.pokemon-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation-name: move-pokemon2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    /* animation-timing-function: ease-in-out; */
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* @keyframes move-pokemon {
+    0% {
+      align-self: flex-start;
+    }
+    100% {
+      align-self: flex-end;
+    }
+} */
+@keyframes move-pokemon {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(150%);
+    }
+}
+
+.pokemon-container:nth-child(1) {
+    animation-delay: 0s;
+}
+  
+.pokemon-container:nth-child(2) {
+    animation-delay: 1.5s;
+}
+  
+.pokemon-container:nth-child(3) {
+    animation-delay: 3s;
+}
+.pokemon-container:nth-child(4) {
+    animation-delay: 4.5s;
+}
+.pokemon-container:nth-child(5) {
+    animation-delay: 6s;
+}
+
+/* @keyframes move-pokemon2 {
+    0% {
+      align-self: flex-end;
+    }
+    100% {
+      align-self: flex-start;
+    }
+} */
+@keyframes move-pokemon2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+.pokemon-container2:nth-child(1) {
+    animation-delay: 0s;
+}
+  
+.pokemon-container2:nth-child(2) {
+    animation-delay: 1.5s;
+}
+  
+.pokemon-container2:nth-child(3) {
+    animation-delay: 3s;
+}
+.pokemon-container2:nth-child(4) {
+    animation-delay: 4.5s;
+}
+.pokemon-container2:nth-child(5) {
+    animation-delay: 6s;
+}
