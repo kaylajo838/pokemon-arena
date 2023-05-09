@@ -53,3 +53,11 @@
 .btn {
     border: 2px solid black;
 }
+
+.card-footer {
+    background-color: #7EC8AC;
+    border-top: 2px solid black;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-evenly;
+}
