@@ -64,4 +64,36 @@ label {
     text-decoration: none;
     padding: 6px 12px;
     margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.battle-btn:hover {
+    transform: scale(1.1); 
+}
+
+.back-btn-container {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 10;
+}
+
+.back-btn {
+    background-color: #fed523;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+    border-radius: .5em;
+    text-decoration: none;
+    padding: 6px 12px;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.back-btn-container:hover .back-btn {
+    transform: scale(1.1); 
 }
