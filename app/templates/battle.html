@@ -8,7 +8,44 @@ Battle
 {% endblock %}
 
 {% block content %}
-<img src="../static/images/results-img.png" alt="" class="title-img">
+<img src="{{url_for('static', filename='images/results-img.png')}}" alt="" class="title-img">
 
+<div class="battle-conatiner">
+    <div class="my-team-conatiner">
+        {% for pokemon in my_team %}
+        <!-- <div class="checkmark" style="display: none;">&#10003;</div> -->
+        <div class="pokemon-container">
+            <img src="{{pokemon.sprite_url}}" alt="pokemon picture">
+            {{pokemon.name}}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="opponent-team-container">
+        {% for pokemon in opponent_team %}
+        <div class="pokemon-container2">
+            <img src="{{pokemon.sprite_url}}" alt="pokemon picture">
+            {{pokemon.name}}
+        </div>
+        <!-- <div class="checkmark" style="display: none;">&#10003;</div> -->
+        {% endfor %}
+    </div>
+</div>
+
+{% if result %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function() {
+            const message = "{{ result[1] }}";
+            const messageType = "{{ 'success' if result[0] else 'danger' }}";
+            let flashDiv = document.createElement('div');
+            flashDiv.classList.add('alert', 'alert-' + messageType);
+            flashDiv.innerHTML = message;
+            let navbarElement = document.querySelector('.navbar');
+            navbarElement.parentNode.insertBefore(flashDiv, navbarElement.nextSibling);
+        }, 7000);
+    });
+</script>
+{% endif %}
 
 {% endblock %}
