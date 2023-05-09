@@ -30,3 +30,28 @@ td {
 th { 
     border: 1px solid white;
 }
+
+/* Media Queries */
+
+@media (max-width: 412px) {
+    .navbar-brand img {
+        height: 33px;
+        width: 186.7px;
+    }
+}
+
+@media (max-width: 280px) {
+    .navbar-toggler {
+        padding: 4px 8px;
+    }
+
+    .navbar-toggler .navbar-toggler-icon {
+        height: 20px;
+        width: 20px; 
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+      
+}
