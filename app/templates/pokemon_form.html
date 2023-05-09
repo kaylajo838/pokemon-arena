@@ -28,7 +28,7 @@ Pokemon Search
       <th scope="col">Name</th>
       <th scope="col">Ability</th>
       <th scope="col">Base Experience</th>
-      <th scope="col">Sprite</th>
+      <!-- <th scope="col">Sprite</th> -->
       <th scope="col">Attack Base Stat</th>
       <th scope="col">HP Base Stat</th>
       <th scope="col">Defense Base Stat</th>
@@ -38,14 +38,14 @@ Pokemon Search
   <tbody>
     {% for pokemon_name in new_pokemon_data %}
     <tr>
-      <th scope="row">{{pokemon_name.name}}</th>
+      <th scope="row">{{pokemon_name.name.title()}}</th>
       <td>{{pokemon_name.ability}}</td>
       <td>{{pokemon_name.base_experience}}</td>
-      <td>{{pokemon_name.sprite_url}}</td>
+      <!-- <td>{{pokemon_name.sprite_url}}</td> -->
       <td>{{pokemon_name.attack_base_stat}}</td>
       <td>{{pokemon_name.hp_base_stat}}</td>
       <td>{{pokemon_name.defense_base_stat}}</td>
-      <td><img src="{{pokemon_name.sprite_url}}" alt="pokemon picture"></td>
+      <td class="poke-img-table"><img src="{{pokemon_name.sprite_url}}" alt="pokemon picture" class="poke-img"></td>
     </tr>
     {% endfor %}
   </tbody>
