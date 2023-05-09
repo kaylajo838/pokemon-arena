@@ -15,26 +15,26 @@ View Team
 <table class="table table-striped table-hover table-dark">
     <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Ability</th>
+            <th scope="col">Pokemon Name</th>
+            <th scope="col">Pokemon Ability</th>
             <th scope="col">Base Experience</th>
             <th scope="col">Attack Base Stat</th>
             <th scope="col">HP Base Stat</th>
             <th scope="col">Defense Base Stat</th>
             <th scope="col">Pokemon Image</th>
-            <th scope="col"></th>
+            <th scope="col" class="last-th">Remove Pokemon</th>
         </tr>
     </thead>
     <tbody>
         {% for pokemon in my_team %}
         <tr>
-            <th scope="row">{{pokemon.name}}</th>
-            <td>{{pokemon.ability}}</td>
+            <th scope="row">{{pokemon.name.title()}}</th>
+            <td>{{pokemon.ability.title()}}</td>
             <td>{{pokemon.base_experience}}</td>
             <td>{{pokemon.attack_base_stat}}</td>
             <td>{{pokemon.hp_base_stat}}</td>
             <td>{{pokemon.defense_base_stat}}</td>
-            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture"></td>
+            <td><img src="{{pokemon.sprite_url}}" alt="pokemon picture" class="poke-img"></td>
             <td class="last-tr"><a class="table_btns" href="{{url_for('main.remove_from_team', name=pokemon.name)}}">Remove</a></td>
         </tr>
         {% endfor %}
