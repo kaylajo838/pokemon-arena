@@ -71,7 +71,7 @@ label {
     transform: scale(1.1); 
 }
 
-.back-btn-container {
+/* .back-btn-container {
     position: absolute;
     top: 100px;
     left: 40px;
@@ -80,6 +80,14 @@ label {
     justify-content: flex-start;
     width: 100%;
     z-index: 10;
+} */
+
+.back-btn-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0;
 }
 
 .back-btn {
@@ -90,10 +98,248 @@ label {
     border-radius: .5em;
     text-decoration: none;
     padding: 6px 12px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     transition: transform 0.3s;
 }
 
 .back-btn-container:hover .back-btn {
     transform: scale(1.1); 
+}
+
+/* Media Queries */
+
+@media (max-width: 912px) {
+    .title-img {
+        height: 170px;
+        width: 360px;
+        margin-top: 0;
+    }
+
+    .opponent-team-img {
+        height: 67px;
+        width: 433px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .your-team-img {
+        height: 67px;
+        width: 267px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .poke-img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .table {
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        text-align: center;
+        width: 90px;
+        height: 90px;
+    }
+
+    .back-btn-container {
+        top: 100px;
+        left: 40px;
+    }
+
+    .back-btn {
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+
+    .battle-btn {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 540px) {
+    .title-img {
+        height: 113px;
+        width: 240px;
+        margin-top: 0;
+    }
+
+    .opponent-team-img {
+        height: 33.5px;
+        width: 216.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .your-team-img {
+        height: 33.5px;
+        width: 133.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .poke-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .table {
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        text-align: center;
+        width: 50px;
+        height: 50px;
+    }
+
+    .back-btn-container {
+        top: 100px;
+        left: 20px;
+    }
+
+    .back-btn {
+        padding: 3px 6px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .battle-btn {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 414px) {
+    .title-img {
+        height: 85px;
+        width: 180px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .opponent-team-img {
+        height: 33.5px;
+        width: 216.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .your-team-img {
+        height: 33.5px;
+        width: 133.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .poke-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .table {
+        /* display: flex;
+        flex-direction: column; */
+        justify-content: center;
+        font-size: 10px;
+    }
+
+    th,
+    td {
+        text-align: center;
+        min-width: 55px;
+        height: 50px;
+    }
+
+    .back-btn-container {
+        top: 80px;
+        left: 20px;
+    }
+
+    .back-btn {
+        padding: 3px 6px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .battle-btn {
+        padding: 3px 6px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .table {
+        font-size: 8px;
+    }
+
+    th,
+    td {
+        min-width: 60px;
+    }
+
+    .back-btn {
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+
+    .battle-btn {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 280px) {
+    .title-img {
+        height: 57px;
+        width: 120px;
+    }
+
+    .opponent-team-img {
+        height: 20px;
+        width: 144.3px;
+    }
+    
+    .your-team-img {
+        height: 20px;
+        width: 89px;
+    }
+
+    .poke-img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .table {
+        font-size: 6px;
+    }
+
+    th,
+    td {
+        text-align: center;
+        width: 45px;
+        height: 50px;
+    }
+
+    .back-btn-container {
+        top: 70px;
+        left: 10px;
+    }
+
+    .back-btn {
+        font-size: 10px;
+    }
+
+    .battle-btn {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
 }
