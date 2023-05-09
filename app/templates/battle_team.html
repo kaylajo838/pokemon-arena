@@ -8,6 +8,9 @@ Battle Team
 {% endblock %}
 
 {% block content %}
+<div class="back-btn-container">
+    <a href="battle_pokemon.html" class="back-btn">Back</a>
+</div>
 <img src="../static/images/i-choose-you-img.png" alt="" class="title-img">
 
 
@@ -72,6 +75,7 @@ Battle Team
 </table>
 {% endif %}
 
-<a href="" class="battle-btn">Battle!!!</a>
+<a href="{{ url_for('main.battle') }}?user_name={{ user_name }}&my_name={{ my_name }}&opponent_team_ids={{ opponent_team_ids }}&my_team_ids={{ my_team_ids }}" class="battle-btn">Battle!!!</a>
+
 
 {% endblock %}
