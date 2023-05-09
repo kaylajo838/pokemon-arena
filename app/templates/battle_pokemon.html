@@ -23,6 +23,9 @@ Battle Arena
             <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
             <a href="{{url_for('main.battle_team', user_id=user.id)}}" class="btn btn-danger">Battle!</a>
         </div>
+        <div class="card-footer">
+            <span>Wins: </span><span>Losses: </span>
+        </div>
     </div>
     {% endif %}
     {% endfor %}
