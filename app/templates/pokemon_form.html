@@ -39,7 +39,7 @@ Pokemon Search
     {% for pokemon_name in new_pokemon_data %}
     <tr>
       <th scope="row">{{pokemon_name.name.title()}}</th>
-      <td>{{pokemon_name.ability}}</td>
+      <td>{{pokemon_name.ability.title()}}</td>
       <td>{{pokemon_name.base_experience}}</td>
       <!-- <td>{{pokemon_name.sprite_url}}</td> -->
       <td>{{pokemon_name.attack_base_stat}}</td>
