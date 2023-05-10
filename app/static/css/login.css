@@ -46,3 +46,51 @@ label {
     font-weight: 600;
     color: white;
 }
+
+/* Media Queries */
+
+@media (max-width: 540px) {
+    .title-img {
+        height: 66px;
+        width: 146.7px;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    #email,
+    #password {
+        width: 250px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 280px) {
+    .title-img {
+        height: 50px;
+        width: 110px;
+    }
+
+    form {
+        width: 250px;
+    }
+
+    #email,
+    #password {
+        width: 200px;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    #submit_btn {
+        font-size: 14px;
+    }
+}

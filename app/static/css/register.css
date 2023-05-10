@@ -49,3 +49,82 @@ label {
     font-weight: 600;
     color: white;
 }
+
+/* Media Queries */
+
+@media (max-width: 1024px) {
+    .title-img {
+        height: 66px;
+        width: 306.7px;
+    }
+
+    form {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    #first_name,
+    #last_name,
+    #email,
+    #password,
+    #confirm_password {
+        width: 250px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 540px) {
+    .title-img {
+        height: 66px;
+        width: 306.7px;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    #first_name,
+    #last_name,
+    #email,
+    #password,
+    #confirm_password {
+        width: 250px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 280px) {
+    .title-img {
+        height: 50px;
+        width: 230px;
+    }
+
+    form {
+        width: 250px;
+    }
+
+    #first_name,
+    #last_name,
+    #email,
+    #password,
+    #confirm_password{
+        width: 200px;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    #submit_btn {
+        font-size: 14px;
+    }
+}
