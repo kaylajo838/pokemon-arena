@@ -31,6 +31,10 @@ th {
     border: 1px solid white;
 }
 
+.active {
+    font-weight: 500;
+}
+
 /* Media Queries */
 
 @media (max-width: 414px) {
