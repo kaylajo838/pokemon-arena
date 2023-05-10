@@ -9,7 +9,7 @@ from ...models import Captured, User
 @login_required
 def home():
     users = User.query.all()
-    return render_template('home.html', users=users)
+    return render_template('home.html', users=users, active_page='/')
 
 
 @main.route('/pokemon_form', methods=['GET', 'POST'])
@@ -46,7 +46,7 @@ def pokemon_form():
         else:
             flash('That pokemon doesn\'t exist', 'danger')
             return redirect(url_for('main.pokemon_form'))
-    return render_template('pokemon_form.html', form=form, catch=catch)
+    return render_template('pokemon_form.html', form=form, catch=catch, active_page='pokemon_form')
 
 
 @main.route('/catch/<poke_name>')
@@ -106,7 +106,7 @@ def remove_from_team(name):
 @login_required
 def view_team():
     my_team = current_user.captured_pokemon
-    return render_template('view_team.html', my_team=my_team)
+    return render_template('view_team.html', my_team=my_team, active_page='view_team')
 
 
 
@@ -116,7 +116,7 @@ def view_team():
 @login_required
 def battle_queue():
     users = User.query.all()
-    return render_template('battle_pokemon.html', users=users)
+    return render_template('battle_pokemon.html', users=users, active_page='battle_queue')
 
 @main.route('/battle_team/<user_id>')
 @login_required
@@ -132,7 +132,7 @@ def battle_team(user_id):
     opponent_team_ids = ','.join([str(pokemon.id) for pokemon in opponent_team])
     my_team_ids = ','.join([str(pokemon.id) for pokemon in my_team])
 
-    return render_template('battle_team.html', opponent_team=opponent_team, my_team=my_team, user_name=user_name, my_name=me, opponent_team_ids=opponent_team_ids, my_team_ids=my_team_ids)
+    return render_template('battle_team.html', opponent_team=opponent_team, my_team=my_team, user_name=user_name, my_name=me, opponent_team_ids=opponent_team_ids, my_team_ids=my_team_ids, active_page='battle_queue')
 
 
 @main.route('/battle')
@@ -205,4 +205,4 @@ def battle():
     else:
         result = (False, f"You lost against {user_name}'s team. {my_name}'s team wins the game with {total_attack_from_self} total points.")
 
-    return render_template('battle.html', opponent_team=opponent_team, my_team=my_team, result=result)
+    return render_template('battle.html', opponent_team=opponent_team, my_team=my_team, result=result, active_page='battle_queue')
