@@ -16,7 +16,7 @@ Battle
         <!-- <div class="checkmark" style="display: none;">&#10003;</div> -->
         <div class="pokemon-container">
             <img src="{{pokemon.sprite_url}}" alt="pokemon picture">
-            {{pokemon.name}}
+            {{pokemon.name.title()}}
         </div>
         {% endfor %}
     </div>
@@ -25,7 +25,7 @@ Battle
         {% for pokemon in opponent_team %}
         <div class="pokemon-container2">
             <img src="{{pokemon.sprite_url}}" alt="pokemon picture">
-            {{pokemon.name}}
+            {{pokemon.name.title()}}
         </div>
         <!-- <div class="checkmark" style="display: none;">&#10003;</div> -->
         {% endfor %}
