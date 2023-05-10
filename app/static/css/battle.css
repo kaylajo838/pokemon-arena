@@ -65,14 +65,6 @@
     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* @keyframes move-pokemon {
-    0% {
-      align-self: flex-start;
-    }
-    100% {
-      align-self: flex-end;
-    }
-} */
 @keyframes move-pokemon {
     0% {
         transform: translateX(0);
@@ -100,14 +92,6 @@
     animation-delay: 6s;
 }
 
-/* @keyframes move-pokemon2 {
-    0% {
-      align-self: flex-end;
-    }
-    100% {
-      align-self: flex-start;
-    }
-} */
 @keyframes move-pokemon2 {
     0% {
         transform: translateX(0);
@@ -134,3 +118,114 @@
 .pokemon-container2:nth-child(5) {
     animation-delay: 6s;
 }
+
+/* Media Queries */
+
+@media (max-width: 1280px) {
+    .title-img {
+        height: 83px;
+        width: 229px;
+        margin-top: 0;
+    }
+
+    .battle-conatiner {
+        width: 400px;
+    }
+
+    img {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .title-img {
+        height: 66px;
+        width: 183px;
+    }
+
+    .battle-conatiner {
+        width: 400px;
+    }
+    
+    img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 412px) {
+    .title-img {
+        height: 55.6px;
+        width: 152.8px;
+    }
+
+    .battle-conatiner {
+        width: 350px;
+    }
+    
+    img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .my-team-conatiner {
+        font-size: 12px;
+    }
+    
+    .opponent-team-container {
+        font-size: 12px;
+    } 
+
+    .alert {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 280px) {
+    .title-img {
+        height: 55.6px;
+        width: 152.8px;
+    }
+
+    .battle-conatiner {
+        width: 250px;
+    }
+    
+    img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .my-team-conatiner {
+        font-size: 12px;
+    }
+    
+    .opponent-team-container {
+        font-size: 12px;
+    }
+
+    @keyframes move-pokemon {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes move-pokemon2 {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .alert {
+        font-size: 14px;
+    }
+}
+/* height: 100px;
+width: 275px; */
