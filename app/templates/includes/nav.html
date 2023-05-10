@@ -14,23 +14,23 @@
                     <a class="nav-link" href="#">Hello, {{current_user.first_name}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{url_for('main.home')}}">Home</a>
+                    <a class="nav-link {% if active_page == '/' %}active{% endif %}" aria-current="page" href="{{url_for('main.home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('main.pokemon_form')}}">Pokemon Search</a>
+                    <a class="nav-link {% if active_page == 'pokemon_form' %}active{% endif %}" href="{{url_for('main.pokemon_form')}}">Pokemon Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('main.view_team')}}">View Team</a>
+                    <a class="nav-link {% if active_page == 'view_team' %}active{% endif %}" href="{{url_for('main.view_team')}}">View Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('main.battle_queue')}}">Battle Arena</a>
+                    <a class="nav-link {% if active_page == 'battle_queue' %}active{% endif %}" href="{{url_for('main.battle_queue')}}">Battle Arena</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('auth.registration')}}">Register</a>
+                    <a class="nav-link {% if active_page == 'registration' %}active{% endif %}" href="{{url_for('auth.registration')}}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('auth.login')}}">Log In</a>
+                    <a class="nav-link {% if active_page == 'login' %}active{% endif %}" href="{{url_for('auth.login')}}">Log In</a>
                 </li>
                 {% endif %}
             </ul>
@@ -38,7 +38,7 @@
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('auth.edit_profile')}}">Edit Profile</a>
+                        <a class="nav-link {% if active_page == 'edit_profile' %}active{% endif %}" href="{{url_for('auth.edit_profile')}}">Edit Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('auth.logout')}}">Log Out</a>
