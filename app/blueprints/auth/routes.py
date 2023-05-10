@@ -25,7 +25,7 @@ def registration():
 
         flash('Nice! You are officially registered!', 'success')
         return redirect(url_for('auth.login'))
-    return render_template('registration.html', form=form)
+    return render_template('registration.html', form=form, active_page='registration')
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -44,7 +44,7 @@ def login():
             error = 'Invalid email or password'
             flash(f'{error}', 'danger')
             return render_template('login.html', form=form)
-    return render_template('login.html', form=form)
+    return render_template('login.html', form=form, active_page='login')
 
 
 @auth.route('/logout')
@@ -81,4 +81,4 @@ def edit_profile():
             flash('Profile Updated!', 'success')
             return redirect(url_for('main.home'))
         
-    return render_template('edit_profile.html', form=form)
+    return render_template('edit_profile.html', form=form, active_page='edit_profile')
