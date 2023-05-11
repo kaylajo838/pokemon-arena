@@ -1,1 +1,1 @@
-web: gunicorn Flask I - Homework:app
+web: gunicorn app:app
