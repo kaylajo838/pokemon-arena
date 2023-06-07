@@ -1,1 +1,1 @@
-web: gunicorn pokemon_arena.app:app
+web: gunicorn app:app
