@@ -1,3 +1,3 @@
-from app import create_app
+from pokemon_arena.app import create_app
 
 app = create_app()
