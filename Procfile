@@ -1,1 +1,1 @@
-web: gunicorn Flask I - Homework.app:app
+web: gunicorn pokemon_arena.app:app
