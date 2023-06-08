@@ -26,8 +26,8 @@ def create_app():
     login.login_message_category = 'warning'
 
     # Importing Blueprints
-    from pokemon_arena.app.main import main
-    from pokemon_arena.app.auth import auth
+    from app.blueprints.main import main
+    from app.blueprints.auth import auth
 
     # Registering Blueprints
     app.register_blueprint(main)
